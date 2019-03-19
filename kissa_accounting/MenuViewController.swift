@@ -1,15 +1,16 @@
 //
-//  SelectViewController.swift
+//  MenuViewController.swift
 //  kissa_accounting
 //
 //  Created by Kei Kawamura on 2018/09/10.
-//  Copyright © 2018年 Kei Kawamura. All rights reserved.
+//  Modified by Tomohiro Hori from 2019/03/18~.
+//  Copyright © 2018 Kei Kawamura / 2019 Tomohiro Hori . All rights reserved.
 //
 
 import Foundation
 import UIKit
 import SwiftyDropbox
-class SelectViewController : UIViewController{
+class MenuViewController : UIViewController{
     
     @IBAction func toInAccounting(_ sender: Any) {
         performSegue(withIdentifier: "toinaccounting", sender: nil)
@@ -22,6 +23,9 @@ class SelectViewController : UIViewController{
     }
     @IBAction func toAllAmount(_ sender: Any) {
         performSegue(withIdentifier: "toallamount", sender: nil)
+    }
+    @IBAction func toServeViewController(_ sender: Any) {
+        performSegue(withIdentifier: "toServeViewController", sender: nil)
     }
     
     @IBAction func dropbox(_ sender: Any) {

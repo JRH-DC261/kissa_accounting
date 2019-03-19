@@ -3,7 +3,8 @@
 //  kissa_accounting
 //
 //  Created by Kei Kawamura on 2018/09/09.
-//  Copyright © 2018年 Kei Kawamura. All rights reserved.
+//  Modified by Tomohiro Hori from 2019/03/18~.
+//  Copyright © 2018 Kei Kawamura / 2019 Tomohiro Hori . All rights reserved.
 //
 
 import UIKit
@@ -19,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        DropboxClientsManager.setupWithAppKey("bwj909yt53z53xy")
+        DropboxClientsManager.setupWithAppKey("m5jdyez1z2wx0rd")
         return true
     }
     

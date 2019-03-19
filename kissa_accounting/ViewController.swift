@@ -3,7 +3,8 @@
 //  kissa_accounting
 //
 //  Created by Kei Kawamura on 2018/09/09.
-//  Copyright © 2018年 Kei Kawamura. All rights reserved.
+//  Modified by Tomohiro Hori from 2019/03/18~.
+//  Copyright © 2018 Kei Kawamura / 2019 Tomohiro Hori . All rights reserved.
 //
 
 import UIKit
@@ -18,7 +19,7 @@ UICollectionViewDelegate {
     var dateUnix: TimeInterval = 0
     
     var status = Array(repeating: "0", count: 20)
-    var intstatus = Array(repeating: 0, count: 20)
+    var intstatus = Array(repeating: "0", count: 20)
     var hogetime = Array(repeating: "0", count: 20)
     var tbstatus = Array(repeating: "0", count: 20)
     var sstatus = Array(repeating: "0", count: 20)
@@ -98,13 +99,13 @@ UICollectionViewDelegate {
             }
         
         //満席表示
-            if intstatus[indexPath.row] == 0{
+            if Int(intstatus[indexPath.row]) == 0{
                 Statuslabel.backgroundColor = UIColor.white
-            }else if intstatus[indexPath.row] == 1{
+            }else if Int(intstatus[indexPath.row]) == 1{
                 Statuslabel.backgroundColor = UIColor.yellow
-            }else if intstatus[indexPath.row] == 2{
+            }else if Int(intstatus[indexPath.row]) == 2{
                 Statuslabel.backgroundColor = UIColor.magenta
-            }else if intstatus[indexPath.row] == 3{
+            }else if Int(intstatus[indexPath.row]) == 3{
                 Statuslabel.backgroundColor = UIColor.cyan
             }
             if Int(self.tbstatus[indexPath.row]) == 1{
@@ -291,7 +292,7 @@ UICollectionViewDelegate {
             //席ステータス取得
             let defaultPlace0 = self.DBRef.child("table/status").child(self.number[i])
             defaultPlace0.observeSingleEvent(of: .value, with: { (snapshot) in self.status[i] = (snapshot.value! as AnyObject).description
-                self.intstatus[i] = Int(self.status[i])!})
+                self.intstatus[i] = self.status[i]})
             let defaultPlace9 = self.DBRef.child("table/tbstatus").child(self.number[i])
             defaultPlace9.observeSingleEvent(of: .value, with: { (snapshot) in self.tbstatus[i] = (snapshot.value! as AnyObject).description})
             let defaultPlace10 = self.DBRef.child("table/sstatus").child(self.number[i])

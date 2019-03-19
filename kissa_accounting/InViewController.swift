@@ -3,7 +3,8 @@
 //  kissa_accounting
 //
 //  Created by Kei Kawamura on 2018/09/16.
-//  Copyright © 2018年 Kei Kawamura. All rights reserved.
+//  Modified by Tomohiro Hori from 2019/03/18~.
+//  Copyright © 2018 Kei Kawamura / 2019 Tomohiro Hori . All rights reserved.
 //
 
 import UIKit

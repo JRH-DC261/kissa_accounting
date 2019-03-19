@@ -73,24 +73,24 @@
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "g_76.png",
+      "filename" : "AppIcon_accounting.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "g_152.png",
+      "filename" : "AppIcon_accounting@2x.png",
       "scale" : "2x"
     },
     {
-      "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "g_167.png",
+      "size" : "83.5x83.5",
       "scale" : "2x"
     },
     {
-      "idiom" : "ios-marketing",
       "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "AppIcon_accounting@1024px.png",
       "scale" : "1x"
     }
   ],
