@@ -15,17 +15,14 @@ class MenuViewController : UIViewController{
     @IBAction func toInAccounting(_ sender: Any) {
         performSegue(withIdentifier: "toinaccounting", sender: nil)
     }
-    @IBAction func toAccounting(_ sender: Any) {
-        performSegue(withIdentifier: "toaccounting", sender: nil)
-    }
-    @IBAction func toComplete(_ sender: Any) {
-        performSegue(withIdentifier: "tocompleteviewcontroller", sender: nil)
-    }
     @IBAction func toAllAmount(_ sender: Any) {
         performSegue(withIdentifier: "toallamount", sender: nil)
     }
-    @IBAction func toServeViewController(_ sender: Any) {
-        performSegue(withIdentifier: "toServeViewController", sender: nil)
+    @IBAction func toServe(_ sender: Any) {
+        performSegue(withIdentifier: "toServe", sender: nil)
+    }
+    @IBAction func toInRegister(_ sender: Any) {
+        performSegue(withIdentifier: "toInRegister", sender: nil)
     }
     
     @IBAction func dropbox(_ sender: Any) {

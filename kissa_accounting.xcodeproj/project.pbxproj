@@ -19,7 +19,9 @@
 		AA9CA872218DE8CA008ADD40 /* AllAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CA871218DE8CA008ADD40 /* AllAmountViewController.swift */; };
 		AAED2976214E63FF00FA7A0D /* InViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED2975214E63FF00FA7A0D /* InViewController.swift */; };
 		D9232FF34F5179E07FFDBFFE /* Pods_kissa_accounting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4599935B61EA43CA29A8B9 /* Pods_kissa_accounting.framework */; };
-		EACA1959224075660052DE50 /* TableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA1958224075660052DE50 /* TableListViewController.swift */; };
+		EA5B529A22438AA300091613 /* InTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B529922438AA200091613 /* InTableListViewController.swift */; };
+		EAA8005B2243728D007E72FB /* InRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA8005A2243728D007E72FB /* InRegisterViewController.swift */; };
+		EACA1959224075660052DE50 /* ServeTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA1958224075660052DE50 /* ServeTableListViewController.swift */; };
 		EACA195B224084890052DE50 /* ServeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACA195A224084890052DE50 /* ServeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +42,9 @@
 		AA755DC221800E16003E482B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA9CA871218DE8CA008ADD40 /* AllAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAmountViewController.swift; sourceTree = "<group>"; };
 		AAED2975214E63FF00FA7A0D /* InViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InViewController.swift; sourceTree = "<group>"; };
-		EACA1958224075660052DE50 /* TableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListViewController.swift; sourceTree = "<group>"; };
+		EA5B529922438AA200091613 /* InTableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTableListViewController.swift; sourceTree = "<group>"; };
+		EAA8005A2243728D007E72FB /* InRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InRegisterViewController.swift; sourceTree = "<group>"; };
+		EACA1958224075660052DE50 /* ServeTableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeTableListViewController.swift; sourceTree = "<group>"; };
 		EACA195A224084890052DE50 /* ServeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,11 +94,13 @@
 				AA2857092145F2A2008DD8B1 /* MenuViewController.swift */,
 				AA6B2CF1214431260096A24E /* ViewController.swift */,
 				AAED2975214E63FF00FA7A0D /* InViewController.swift */,
+				EAA8005A2243728D007E72FB /* InRegisterViewController.swift */,
 				AA43F6072168C5DA006362D2 /* InFinishViewController.swift */,
+				EA5B529922438AA200091613 /* InTableListViewController.swift */,
 				AA00E617215F5E0000CD18DE /* CompleteViewController.swift */,
 				AA6B2CF3214431260096A24E /* Main.storyboard */,
 				EACA195A224084890052DE50 /* ServeViewController.swift */,
-				EACA1958224075660052DE50 /* TableListViewController.swift */,
+				EACA1958224075660052DE50 /* ServeTableListViewController.swift */,
 				AA6B2CF8214431270096A24E /* LaunchScreen.storyboard */,
 				AA6B2CF6214431270096A24E /* Assets.xcassets */,
 				AA6B2CFB214431270096A24E /* Info.plist */,
@@ -235,11 +241,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA43F6082168C5DA006362D2 /* InFinishViewController.swift in Sources */,
+				EA5B529A22438AA300091613 /* InTableListViewController.swift in Sources */,
 				AA28570A2145F2A2008DD8B1 /* MenuViewController.swift in Sources */,
 				EACA195B224084890052DE50 /* ServeViewController.swift in Sources */,
 				AAED2976214E63FF00FA7A0D /* InViewController.swift in Sources */,
-				EACA1959224075660052DE50 /* TableListViewController.swift in Sources */,
+				EACA1959224075660052DE50 /* ServeTableListViewController.swift in Sources */,
 				AA9CA872218DE8CA008ADD40 /* AllAmountViewController.swift in Sources */,
+				EAA8005B2243728D007E72FB /* InRegisterViewController.swift in Sources */,
 				AA6B2CF2214431260096A24E /* ViewController.swift in Sources */,
 				AA00E618215F5E0000CD18DE /* CompleteViewController.swift in Sources */,
 				AA6B2CF0214431260096A24E /* AppDelegate.swift in Sources */,

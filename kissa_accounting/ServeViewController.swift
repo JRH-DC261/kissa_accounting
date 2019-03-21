@@ -55,8 +55,6 @@ class ServeViewController: UIViewController {
             let alertController = UIAlertController(title: "配膳完了（デザート以外）",message: "タイマーセットしますか？", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
                 self.DBRef.child("table/status").child(self.tableNumber!).setValue(3)
-                self.DBRef.child("table/WStatus").child(self.tableNumber!).setValue(0)
-                self.DBRef.child("table/SStatus").child(self.tableNumber!).setValue(0)
                 self.DBRef.child("table/order").child(self.tableNumber!).child("completeTime").setValue(ServerValue.timestamp())
             }
             let cancelButton = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
@@ -182,13 +180,13 @@ class ServeViewController: UIViewController {
             if Int(self.status!) == 0{
                 self.statusButton.backgroundColor = UIColor.clear
             }else if Int(self.status!) == 1{
-                self.statusButton.backgroundColor = UIColor(red:0.75, green:0.88, blue:0.90, alpha:0.75)
+                self.statusButton.backgroundColor = UIColor(red:0.81, green:0.91, blue:0.92, alpha:1.0)
             }else if Int(self.status!) == 2{
-                self.statusButton.backgroundColor = UIColor(red:0.98, green:0.93, blue:0.95, alpha:1.0)
+                self.statusButton.backgroundColor = UIColor(red:0.96, green:0.87, blue:0.90, alpha:1.0)
             }else if Int(self.status!) == 3{
-                self.statusButton.backgroundColor = UIColor(red:0.96, green:0.92, blue:0.41, alpha:0.5)
+                self.statusButton.backgroundColor = UIColor(red:0.98, green:0.96, blue:0.70, alpha:1.0)
             }else if Int(self.status!) == 4{
-                self.statusButton.backgroundColor = UIColor(red:0.75, green:0.83, blue:0.41, alpha:0.5)
+                self.statusButton.backgroundColor = UIColor(red:0.87, green:0.91, blue:0.70, alpha:1.0)
             }
         })
         
@@ -196,9 +194,9 @@ class ServeViewController: UIViewController {
         defaultPlaceW.observe(.value, with: { snapshot in
             self.WStatus = (snapshot.value! as AnyObject).description
             if Int(self.WStatus!) == 1{
-                self.WStatusButton.backgroundColor = UIColor(red:0.98, green:0.93, blue:0.95, alpha:1.0)
+                self.WStatusButton.backgroundColor = UIColor(red:0.96, green:0.87, blue:0.90, alpha:1.0)
             }else if Int(self.WStatus!) == 2{
-                self.WStatusButton.backgroundColor = UIColor(red:0.75, green:0.83, blue:0.41, alpha:0.5)
+                self.WStatusButton.backgroundColor = UIColor(red:0.87, green:0.91, blue:0.70, alpha:1.0)
             }else{
                 self.WStatusButton.backgroundColor = UIColor.clear
             }
@@ -207,9 +205,9 @@ class ServeViewController: UIViewController {
         defaultPlaceS.observe(.value, with: { snapshot in
             self.SStatus = (snapshot.value! as AnyObject).description
             if Int(self.SStatus!) == 1{
-                self.SStatusButton.backgroundColor = UIColor(red:0.98, green:0.93, blue:0.95, alpha:1.0)
+                self.SStatusButton.backgroundColor = UIColor(red:0.96, green:0.87, blue:0.90, alpha:1.0)
             }else if Int(self.SStatus!) == 2{
-                self.SStatusButton.backgroundColor = UIColor(red:0.75, green:0.83, blue:0.41, alpha:0.5)
+                self.SStatusButton.backgroundColor = UIColor(red:0.87, green:0.91, blue:0.70, alpha:1.0)
             }else{
                 self.SStatusButton.backgroundColor = UIColor.clear
             }
@@ -218,9 +216,9 @@ class ServeViewController: UIViewController {
         defaultPlaceP.observe(.value, with: { snapshot in
             self.PStatus = (snapshot.value! as AnyObject).description
             if Int(self.PStatus!) == 1{
-                self.PStatusButton.backgroundColor = UIColor(red:0.98, green:0.93, blue:0.95, alpha:1.0)
+                self.PStatusButton.backgroundColor = UIColor(red:0.96, green:0.87, blue:0.90, alpha:1.0)
             }else if Int(self.PStatus!) == 2{
-                self.PStatusButton.backgroundColor = UIColor(red:0.75, green:0.83, blue:0.41, alpha:0.5)
+                self.PStatusButton.backgroundColor = UIColor(red:0.87, green:0.91, blue:0.70, alpha:1.0)
             }else{
                 self.PStatusButton.backgroundColor = UIColor.clear
             }
