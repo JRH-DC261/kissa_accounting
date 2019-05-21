@@ -15,10 +15,10 @@ class InRegisterViewController: UIViewController{
     var DBRef : DatabaseReference!
     var tableNumber : String?
     var newTableNumber : String?
-    
+
     var proceeds : String?
     var intProceeds : Int?
-    
+
     @IBOutlet weak var WRemainAmount: UILabel!
     @IBOutlet weak var SRemainAmount: UILabel!
     @IBOutlet weak var PRemainAmount: UILabel!
@@ -27,48 +27,48 @@ class InRegisterViewController: UIViewController{
     @IBOutlet weak var SCheckAmount: UILabel!
     @IBOutlet weak var PCheckAmount: UILabel!
     @IBOutlet weak var DCheckAmount: UILabel!
-    
+
     @IBOutlet weak var WCheckStepper: UIStepper!
     @IBOutlet weak var SCheckStepper: UIStepper!
     @IBOutlet weak var PCheckStepper: UIStepper!
     @IBOutlet weak var DCheckStepper: UIStepper!
-    
+
     @IBOutlet weak var subTotalAmount: UILabel!
     @IBOutlet weak var discountAmount: UILabel!
     @IBOutlet weak var totalAmount: UILabel!
     @IBOutlet weak var tenderAmount: UILabel!
     @IBOutlet weak var changeAmount: UILabel!
-    
-    
+
+
     @IBAction func WStepper(_ sender: UIStepper) {
         let Amount = Int(sender.value)
         WCheckAmount.text = "\(Amount)"
-        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*250 + Int(PCheckStepper.value)*300 + Int(DCheckStepper.value)*150)"
-        discountAmount.text = "\(min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(PCheckStepper.value))*100)"
+        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*200 + Int(PCheckStepper.value)*300 + Int(DCheckStepper.value)*100)"
+        discountAmount.text = "\((min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)) + min(Int(PCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)))*100)"
         totalAmount.text = "\(Int(subTotalAmount.text!)! - Int(discountAmount.text!)!)"
     }
     @IBAction func SStepper(_ sender: UIStepper) {
         let Amount = Int(sender.value)
         SCheckAmount.text = "\(Amount)"
-        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*250 + Int(PCheckStepper.value)*300 + Int(DCheckStepper.value)*150)"
-        discountAmount.text = "\(min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(PCheckStepper.value))*100)"
+        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*200 + Int(PCheckStepper.value)*300 + Int(DCheckStepper.value)*100)"
+        discountAmount.text = "\((min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)) + min(Int(PCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)))*100)"
         totalAmount.text = "\(Int(subTotalAmount.text!)! - Int(discountAmount.text!)!)"
     }
     @IBAction func PStepper(_ sender: UIStepper) {
         let Amount = Int(sender.value)
         PCheckAmount.text = "\(Amount)"
-        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*250 + Int(PCheckStepper.value)*300 + Int(DCheckStepper.value)*150)"
-        discountAmount.text = "\(min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(PCheckStepper.value))*100)"
+        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*200 + Int(PCheckStepper.value)*300 + Int(DCheckStepper.value)*100)"
+        discountAmount.text = "\((min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)) + min(Int(PCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)))*100)"
         totalAmount.text = "\(Int(subTotalAmount.text!)! - Int(discountAmount.text!)!)"
     }
     @IBAction func DStepper(_ sender: UIStepper) {
         let Amount = Int(sender.value)
         DCheckAmount.text = "\(Amount)"
-        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*250 + Int(PCheckStepper.value)*300 + Int(DCheckStepper.value)*150)"
-        discountAmount.text = "\(min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(PCheckStepper.value))*100)"
+        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*200 + Int(PCheckStepper.value)*300 + Int(DCheckStepper.value)*100)"
+        discountAmount.text = "\((min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)) + min(Int(PCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)))*100)"
         totalAmount.text = "\(Int(subTotalAmount.text!)! - Int(discountAmount.text!)!)"
     }
-    
+
     @IBAction func checkAll(_ sender: Any) {
         WCheckAmount.text = WRemainAmount.text
         WCheckStepper.value = Double(Int(WRemainAmount.text!)!)
@@ -78,11 +78,11 @@ class InRegisterViewController: UIViewController{
         PCheckStepper.value = Double(Int(PRemainAmount.text!)!)
         DCheckAmount.text = DRemainAmount.text
         DCheckStepper.value = Double(Int(DRemainAmount.text!)!)
-        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*250 + Int(WCheckStepper.value)*300 + Int(DCheckStepper.value)*150)"
-        discountAmount.text = "\("\(min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(PCheckStepper.value))*100)")"
+        subTotalAmount.text = "\(Int(WCheckStepper.value)*300 + Int(SCheckStepper.value)*200 + Int(PCheckStepper.value)*300 + Int(DCheckStepper.value)*100)"
+        discountAmount.text = "\((min(Int(WCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)) + min(Int(PCheckStepper.value),Int(SCheckStepper.value),Int(DCheckStepper.value)))*100)"
         totalAmount.text = "\(Int(subTotalAmount.text!)! - Int(discountAmount.text!)!)"
     }
-    
+
     @IBAction func numPad(_ sender: UIButton) {
         if tenderAmount.text == "0"{
             if sender.titleLabel!.text != "00"{
@@ -102,16 +102,16 @@ class InRegisterViewController: UIViewController{
             }
         }
     }
-    
+
     @IBAction func numPadClear(_ sender: Any) {
         tenderAmount.text = "0"
         changeAmount.text = "0"
     }
-    
+
     //    @IBAction func change(_ sender: Any) {
     //        changeAmount.text = "\(Int(tenderAmount.text!)!-Int(totalAmount.text!)!)"
     //    }
-    
+
     @IBAction func check(_ sender: Any) {
         totalAmount.text = "\(Int(subTotalAmount.text!)! - Int(discountAmount.text!)!)"
         changeAmount.text = "\(Int(tenderAmount.text!)! - Int(totalAmount.text!)!)"
@@ -175,7 +175,7 @@ class InRegisterViewController: UIViewController{
                         guard let client = DropboxClientsManager.authorizedClient else {
                             return}
                         let fileData = "\(self.tableNumber!),/\(hogeKey!)/,\(self.WCheckAmount.text!),\(self.SCheckAmount.text!),\(self.PCheckAmount.text!),\(self.DCheckAmount.text!),\(self.discountAmount.text!),\(self.tenderAmount.text!)".data(using: String.Encoding.utf8, allowLossyConversion: false)!
-                        _ = client.files.deleteV2(path: "/Data/receipt.csv")
+                        _ = client.files.deleteV2(path: "/kissa2019.system/kissa_accounting_reciept/Data/receipt.csv")
                             .response{ response, error in
                                 if let response = response {
                                     print(response)
@@ -183,7 +183,7 @@ class InRegisterViewController: UIViewController{
                                     print(error)
                                 }
                         }
-                        _ = client.files.upload(path:"/Data/receipt.csv", input: fileData)
+                        _ = client.files.upload(path:"/kissa2019.system/kissa_accounting_reciept/Data/receipt.csv", input: fileData)
                             .response { response, error in
                                 if let response = response {
                                     print(response)
@@ -195,7 +195,7 @@ class InRegisterViewController: UIViewController{
                                 print(progressData)
                         }
                         //self.GetMoneySum = "\(Int(self.GetMoneySum)! + Int(self.tenderAmount.text!)!)"
-                        
+
                         //全食数の更新
                         let defaultPlaceX = self.DBRef.child("inProceeds")
                         defaultPlaceX.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -224,7 +224,7 @@ class InRegisterViewController: UIViewController{
                         self.DCheckStepper.value = 0
                         self.tenderAmount.text = "0"
                         self.changeAmount.text = "0"
-                        
+
                         //会計終了判定
                         if WRemaining == 0,SRemaining == 0,PRemaining == 0,DRemaining == 0{
                             let alertController = UIAlertController(title: "会計が終了しました",message: "", preferredStyle: UIAlertController.Style.alert)
@@ -236,7 +236,7 @@ class InRegisterViewController: UIViewController{
                                     self.DBRef.child("table/orderOrder").child(hogeKey!).setValue(nil)
                                     self.DBRef.child("table/orderKey").child(self.tableNumber!).setValue(nil)
                                 })
-                                self.DBRef.child("table/order").child(self.tableNumber!).setValue(["W1Amount":0, "W2Amount":0, "P1Amount":0, "P2Amount":0, "S1Amount":0, "S2Amount":0, "S3Amount":0, "D1Amount":0, "time":0, "completeTime":0, "totalWAmount":0, "totalSAmount":0, "totalPAmount":0, "totalDAmount":0, ])
+                                self.DBRef.child("table/order").child(self.tableNumber!).setValue(["W1Amount":0, "P1Amount":0, "P2Amount":0, "S1Amount":0, "S2Amount":0, "D1Amount":0, "D2Amount":0, "D3Amount":0, "D4Amount":0, "D11Amount":0, "D12Amount":0, "D13Amount":0, "D14Amount":0, "D15Amount":0, "time":0, "completeTime":0, "totalWAmount":0, "totalSAmount":0, "totalPAmount":0, "totalDAmount":0])
                                 self.DBRef.child("table/status").child(self.tableNumber!).setValue(0)
                                 self.DBRef.child("table/WStatus").child(self.tableNumber!).setValue(0)
                                 self.DBRef.child("table/PStatus").child(self.tableNumber!).setValue(0)
@@ -257,17 +257,17 @@ class InRegisterViewController: UIViewController{
         alertController.addAction(cancelButton)
         present(alertController,animated: true,completion: nil)
     }
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //インスタンスを作成
         DBRef = Database.database().reference()
-        
+
         //デフォルト表示
         tableNumber = newTableNumber ?? "001"
         self.navigationItem.title = "Table " + tableNumber!
-        
+
         Timer.scheduledTimer(
             timeInterval: 0.1,
             target: self,
@@ -276,7 +276,7 @@ class InRegisterViewController: UIViewController{
             repeats: false
         )
     }
-    
+
     @objc func amountload(_ sender: Timer) {
         let defaultPlaceW = DBRef.child("table/order").child(tableNumber!).child("totalWAmount")
         defaultPlaceW.observe(.value, with: { snapshot in
@@ -294,12 +294,12 @@ class InRegisterViewController: UIViewController{
         defaultPlaceD.observe(.value, with: { snapshot in
             self.DRemainAmount.text = (snapshot.value! as AnyObject).description
         })
-        
+
         //        let defaultPlace7 = self.DBRef.child("inProceeds")
         //        defaultPlace7.observe(.value) { (snap: DataSnapshot) in
         //            self.ProceedsAmount.text = (snap.value! as AnyObject).description}
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

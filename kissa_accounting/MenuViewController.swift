@@ -12,9 +12,6 @@ import UIKit
 import SwiftyDropbox
 class MenuViewController : UIViewController{
     
-    @IBAction func toInAccounting(_ sender: Any) {
-        performSegue(withIdentifier: "toinaccounting", sender: nil)
-    }
     @IBAction func toAllAmount(_ sender: Any) {
         performSegue(withIdentifier: "toallamount", sender: nil)
     }

@@ -11,22 +11,22 @@ import Foundation
 import Firebase
 
 class ServeTableListViewController: UITableViewController {
-    
+
     @IBOutlet weak var sideTableView: UITableView!
-    
+
     @IBAction func toMenu(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    let number = ["001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018"]
+
+    let number = ["001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019","020","021","022","023","024","025","026","027","028","029","030","031","032","033","034","035","036","037","038","039","040"]
     var tableNumber : String?
     // インスタンス変数
     var DBRef:DatabaseReference!
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return number.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath)
@@ -59,20 +59,20 @@ class ServeTableListViewController: UITableViewController {
         }
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableNumber = number[indexPath.row]
         performSegue(withIdentifier:"toNextView", sender: nil)
         sideTableView.deselectRow(at: indexPath, animated:true)
     }
-    
+
     //次のビューに渡す値を設定
     override func  prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextNC = segue.destination as! UINavigationController
         let nextVC = nextNC.viewControllers.first as! ServeViewController
         nextVC.newTableNumber = tableNumber!
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //インスタンスを作成
