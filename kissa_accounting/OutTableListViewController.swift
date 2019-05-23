@@ -1,8 +1,8 @@
 //
-//  TableListViewController.swift
+//  OutTableListViewController.swift
 //  kissa_accounting
 //
-//  Created by Tomohiro Hori on 2019/03/19.
+//  Created by Tomohiro Hori on 2019/05/23.
 //  Copyright © 2019 Tomohiro Hori. All rights reserved.
 //
 
@@ -10,23 +10,23 @@ import UIKit
 import Foundation
 import Firebase
 
-class InTableListViewController: UITableViewController {
-    
+class OutTableListViewController: UITableViewController {
+
     @IBOutlet weak var sideTableView: UITableView!
-    
+
     @IBAction func toMenu(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    let number = ["001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019","020","021","022","023","024"]
+
+    let number = ["101","102","103","104","105","106","107","108","109","110"]
     var tableNumber : String?
     // インスタンス変数
     var DBRef:DatabaseReference!
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return number.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath)
@@ -59,20 +59,20 @@ class InTableListViewController: UITableViewController {
         }
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableNumber = number[indexPath.row]
         performSegue(withIdentifier:"toNextView", sender: nil)
         sideTableView.deselectRow(at: indexPath, animated:true)
     }
-    
+
     //次のビューに渡す値を設定
     override func  prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextNC = segue.destination as! UINavigationController
-        let nextVC = nextNC.viewControllers.first as! InRegisterViewController
+        let nextVC = nextNC.viewControllers.first as! OutRegisterViewController
         nextVC.newTableNumber = tableNumber!
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //インスタンスを作成

@@ -12,14 +12,20 @@ import UIKit
 import SwiftyDropbox
 class MenuViewController : UIViewController{
     
-    @IBAction func toAllAmount(_ sender: Any) {
+    /*@IBAction func toAllAmount(_ sender: Any) {
         performSegue(withIdentifier: "toallamount", sender: nil)
-    }
+    }*/
     @IBAction func toServe(_ sender: Any) {
         performSegue(withIdentifier: "toServe", sender: nil)
     }
+    @IBAction func toOutServe(_ sender: Any) {
+        performSegue(withIdentifier: "toOutServe", sender: nil)
+    }
     @IBAction func toInRegister(_ sender: Any) {
         performSegue(withIdentifier: "toInRegister", sender: nil)
+    }
+    @IBAction func toOutRegister(_ sender: Any) {
+        performSegue(withIdentifier: "toOutRegister", sender: nil)
     }
     
     @IBAction func dropbox(_ sender: Any) {
