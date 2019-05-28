@@ -147,7 +147,7 @@ class OutServeViewController: UIViewController {
         
         //デフォルト表示
         tableNumber = newTableNumber ?? "101"
-        self.navigationItem.title = "Table " + tableNumber!
+        self.navigationItem.title = "Order " + tableNumber!
         
         Timer.scheduledTimer(
             timeInterval: 0.1,

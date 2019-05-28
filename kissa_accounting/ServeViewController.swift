@@ -157,7 +157,7 @@ class ServeViewController: UIViewController {
 
         //デフォルト表示
         tableNumber = newTableNumber ?? "001"
-        self.navigationItem.title = "Table " + tableNumber!
+        self.navigationItem.title = "Order " + tableNumber!
 
         Timer.scheduledTimer(
             timeInterval: 0.1,
