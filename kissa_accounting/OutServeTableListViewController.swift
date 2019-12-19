@@ -19,7 +19,7 @@ class OutServeTableListViewController: UITableViewController {
     }
     
     //let number = ["101","102","103","104","105","106","107","108","109","110"]
-    var tableNumber : String?
+    var orderNumber : String?
     var tableArray : [String] = []
     // インスタンス変数
     var DBRef:DatabaseReference!
@@ -69,8 +69,8 @@ class OutServeTableListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //tableNumber = number[indexPath.row]
-        tableNumber = tableArray[indexPath.row]
+        //orderNumber = number[indexPath.row]
+        orderNumber = tableArray[indexPath.row]
         performSegue(withIdentifier:"toNextView", sender: nil)
         sideTableView.deselectRow(at: indexPath, animated:true)
     }
@@ -79,7 +79,7 @@ class OutServeTableListViewController: UITableViewController {
     override func  prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextNC = segue.destination as! UINavigationController
         let nextVC = nextNC.viewControllers.first as! OutServeViewController
-        nextVC.newTableNumber = tableNumber!
+        nextVC.neworderNumber = orderNumber!
     }
     
     override func viewDidLoad() {
